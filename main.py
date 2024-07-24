@@ -5,29 +5,49 @@ class House:
 
 
     def __eq__(self, other):
-        return self.number_of_floors == other
-
+        if isinstance(other, int):
+            return self.number_of_floors == other
+        else:
+            return self.number_of_floors == other
 
     def __lt__(self, other):
-        return self.number_of_floors < other
+        if isinstance(other, int):
+            return self.number_of_floors < other
+        else:
+            return self.number_of_floors < other
 
     def __le__(self , other):
-        return self.number_of_floors <= other
+        if isinstance(other, int):
+            return self.number_of_floors <= other
+        else:
+            return self.number_of_floors <= other
     def __gt__(self , other):
-        return self.number_of_floors > other
+        if isinstance(other, int):
+            return self.number_of_floors > other
+        else:
+            return self.number_of_floors > other
     def __ge__(self , other):
-        return self.number_of_floors >= other
+        if isinstance(other, int):
+            return self.number_of_floors >= other
+        else:
+            return self.number_of_floors >= other
     def __ne__(self, other):
-        return self.number_of_floors != other
+        if isinstance(other, int):
+            return self.number_of_floors != other
+        else:
+            return self.number_of_floors != other
     def __add__(self, value):
-        self.number_of_floors += value
-        return self
+        if isinstance(value, int):
+            self.number_of_floors += value
+            return self
     def __iadd__(self, value):
-        self.number_of_floors += value
-        return self
+        if isinstance(value, int):
+            self.number_of_floors += value
+            return self
     def __radd__(self, value):
-        self.number_of_floors += value
-        return self
+        if isinstance(value, int):
+            self.number_of_floors += value
+            return self
 
     def __str__(self):
         return f'Название: {self.name} кол-во этажей:{self.number_of_floors}'
